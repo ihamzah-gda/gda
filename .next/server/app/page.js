@@ -363,7 +363,7 @@ const Clients = ()=>{
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx("div", {
                         className: "grid grid-cols-3 md:grid-cols-5 grid-rows-3 gap-12 pt-5 place-items-center",
-                        children: constants/* logos */.UN.map((logo)=>/*#__PURE__*/ jsx_runtime_.jsx("div", {
+                        children: constants/* logos */.U.map((logo)=>/*#__PURE__*/ jsx_runtime_.jsx("div", {
                                 className: "sm:max-w-[120px] max-w-[100px] pointer-events-none select-none",
                                 children: /*#__PURE__*/ jsx_runtime_.jsx("img", {
                                     src: logo.logo,
@@ -497,7 +497,7 @@ const Hero = ()=>{
                         children: [
                             /*#__PURE__*/ jsx_runtime_.jsx("h1", {
                                 className: "text-5xl leading-[4rem] mb-8",
-                                children: "حيث تتلاقى الأفكار الإبداعية مع التقنيات المبتكرة لخلق \uD83D\uDE07 تجارب فريدة"
+                                children: "حيث تتلاقى الأفكار الإبداعية مع التقنيات المبتكرة لخلق تجارب فريدة"
                             }),
                             /*#__PURE__*/ jsx_runtime_.jsx("p", {
                                 className: "text-lg",
@@ -562,10 +562,10 @@ const Works = ()=>{
                             /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
                                 className: "gda-parent-project flex-wrap mt-3",
                                 children: [
-                                    constants/* clients */.yj.length === 0 && /*#__PURE__*/ jsx_runtime_.jsx("p", {
+                                    constants/* clients */.y.length === 0 && /*#__PURE__*/ jsx_runtime_.jsx("p", {
                                         children: "No clients found"
                                     }),
-                                    constants/* clients */.yj.map((client)=>/*#__PURE__*/ (0,jsx_runtime_.jsxs)((link_default()), {
+                                    constants/* clients */.y.map((client)=>/*#__PURE__*/ (0,jsx_runtime_.jsxs)((link_default()), {
                                             href: `/pages/works/${client.id}`,
                                             className: "gda-col-project",
                                             children: [

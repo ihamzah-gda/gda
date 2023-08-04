@@ -370,7 +370,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function ProjectPage({ params }) {
-    const project = _app_constants__WEBPACK_IMPORTED_MODULE_1__/* .clients */ .yj.find((p)=>p.id === params.id);
+    const project = _app_constants__WEBPACK_IMPORTED_MODULE_1__/* .clients */ .y.find((p)=>p.id === params.id);
     if (!project) {
         return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("p", {
             children: "Project not found"
@@ -774,7 +774,7 @@ function ProjectPage({ params }) {
     });
 }
 async function generateStaticParams() {
-    return _app_constants__WEBPACK_IMPORTED_MODULE_1__/* .clients */ .yj.map((project)=>({
+    return _app_constants__WEBPACK_IMPORTED_MODULE_1__/* .clients */ .y.map((project)=>({
             id: project.id
         }));
 }
