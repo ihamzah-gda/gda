@@ -1,0 +1,215 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: system-ui, -apple-system;
+	font-style: normal;
+	font-weight: 400;
+	src: local("Pacifico Regular"), local("Pacifico-Regular"),
+		url(https://fonts.gstatic.com/s/pacifico/v12/FwZY7-Qmy14u9lezJ-6H6MmBp0u-.woff2)
+			format("woff2");
+	font-display: swap;
+}
+
+:root {
+	--foreground-rgb: 255, 255, 255;
+	--background-start-rgb: 9, 9, 11;
+	--background-end-rgb: 9, 9, 11;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--foreground-rgb: 255, 255, 255;
+		--background-start-rgb: 9, 9, 11;
+		--background-end-rgb: 9, 9, 11;
+	}
+}
+
+body {
+	color: rgb(var(--foreground-rgb));
+
+	background-color: rgb(24, 24, 27);
+	overflow-x: hidden;
+}
+
+/* GDA Custom Styling */
+
+h1 {
+	font-style: normal;
+	font-weight: 700;
+	@apply text-xl md:text-2xl font-bold mb-2 drop-shadow-md;
+}
+
+h2 {
+	@apply text-base md:text-xl lg:text-xl font-semibold;
+}
+
+h3 {
+	@apply text-sm md:text-base lg:text-lg font-medium;
+}
+h1,
+h2,
+h3,
+h4 {
+	font-family: skolar-sans-arabic, ui-sans-serif, system-ui, -apple-system,
+		BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+		sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+		"Noto Color Emoji";
+	font-style: normal;
+	font-weight: 700;
+	@apply drop-shadow-md;
+}
+
+p {
+	font-family: greycliff-arabic-cf, sans-serif;
+	font-style: normal;
+	font-weight: 300;
+	@apply text-sm;
+}
+strong {
+	font-weight: 600;
+}
+.gradient-border {
+	position: relative;
+}
+.gradient-border::before {
+	content: "";
+	background: linear-gradient(
+		160deg,
+		rgba(255, 255, 255, 0.25),
+		rgba(255, 255, 255, 0.08),
+		rgba(255, 255, 255, 0.02),
+		rgba(255, 255, 255, 0.05)
+	);
+	-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+	-webkit-mask-composite: xor;
+	mask-composite: exclude;
+	pointer-events: none;
+	@apply rounded-3xl p-[1px] absolute inset-0;
+}
+
+.gda-container {
+	@apply gradient-border shadow-inner leading-normal rounded-3xl;
+}
+
+.gda-blur {
+	@apply backdrop-blur-xl bg-zinc-950/20;
+}
+
+.gda-hover {
+	@apply duration-1000 ease-in-out transition-all hover:bg-zinc-950/60;
+}
+.gda-col {
+	@apply flex-1 w-full md:w-1/4 lg:w-1/4 hover:basis-1/4 py-3 px-4 gda-container bg-zinc-950/20;
+}
+
+.gda-col-no-hover {
+	@apply flex-1 w-full md:w-1/4 lg:w-1/4 py-3 px-4 gda-container;
+}
+
+.gda-parent {
+	@apply gap-4 my-4 mx-0 max-w-[1080px] justify-center flex flex-col sm:flex-row sm:items-stretch items-center;
+}
+
+.gda-mask {
+	mask-image: linear-gradient(
+		to bottom,
+		rgba(0, 0, 0, 1) 0%,
+		rgba(0, 0, 0, 1) 50%,
+		rgba(0, 0, 0, 0) 98%,
+		transparent 100%
+	);
+}
+
+body.no-scroll {
+	overflow: hidden;
+}
+
+/* Scroll Bar Customization */
+
+/* For Chrome, Edge, and Safari */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	@apply bg-zinc-950;
+}
+
+::-webkit-scrollbar-thumb {
+	@apply bg-zinc-700/40;
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	@apply bg-zinc-700;
+}
+
+/* For Firefox */
+body {
+	scrollbar-width: thin;
+	scrollbar-color: #09090b #3f3f46;
+}
+
+.gda-border {
+	position: absolute;
+	@apply shadow-inner bg-zinc-950/20 leading-normal rounded-3xl flex-col w-56 max-w-[45vw] mr-3 px-6 py-4;
+}
+.gda-border::before {
+	content: "";
+	background: linear-gradient(
+		160deg,
+		rgba(255, 255, 255, 0.25),
+		rgba(255, 255, 255, 0.08),
+		rgba(255, 255, 255, 0.02),
+		rgba(255, 255, 255, 0.05)
+	);
+	-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+	-webkit-mask-composite: xor;
+	mask-composite: exclude;
+	pointer-events: none;
+	@apply rounded-3xl p-[1px] absolute inset-0;
+}
+
+.gda-child-container {
+	@apply gda-container p-6 flex-grow basis-auto flex flex-col justify-end bg-gradient-to-t from-zinc-950 via-zinc-950 via-20% hover:bg-zinc-950/50 transition duration-500 ease-in w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5;
+}
+
+.gda-col-project {
+	@apply flex-1 flex w-full min-w-[300px] min-h-[200px] md:w-1/3 lg:w-1/4 flex-col justify-end hover:basis-1/4 bg-gradient-to-tl from-zinc-950 via-zinc-950 via-10% py-3 px-4 gda-container hover:bg-zinc-950/50 duration-1000 ease-in-out transition-all;
+}
+
+.gda-parent-project {
+	@apply gap-6 max-w-[1080px] h-full justify-center flex flex-col flex-nowrap sm:flex-wrap sm:flex-row sm:items-stretch items-center;
+}
+
+.gda-row-services {
+	@apply flex flex-1 w-full min-w-[500px] min-h-[200px] md:w-1/3 lg:w-1/4 flex-row items-end content-stretch hover:basis-1/4 bg-gradient-to-tl from-zinc-950 via-zinc-950 via-10% py-3 px-4 gda-container hover:bg-zinc-950/50 duration-1000 ease-in-out transition-all;
+}
+/* .blue_gradient {
+  background: linear-gradient(180deg, #bca5ff00 0%, #325172 100%);
+  filter: blur(100px);
+}
+.green_gradient {
+  background: linear-gradient(180deg, #4083894a 0%, #323e3f 100%);
+  filter: blur(100px);
+}
+
+.yellow_gradient {
+  background: linear-gradient(90deg, #f2b27205 0%, #c98032c4 100%);
+  filter: blur(100px);
+}
+
+.pink_gradient {
+  background: linear-gradient(90deg, #da8bd8 0%, #fc67fa 100%);
+  filter: blur(100px);
+} */
+
+.gda-section {
+	@apply w-full justify-center mx-auto flex relative my-3;
+}
+
+.gda-section-child {
+	@apply w-full max-w-[1080px] p-6 mx-3 gda-container gda-hover gda-blur;
+}
